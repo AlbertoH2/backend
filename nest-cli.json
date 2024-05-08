@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/02-crud-mysql/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "plugins": [
+      "@nestjs/swagger"
+    ],
+    "webpack": true,
+    "tsConfigPath": "apps/02-crud-mysql/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/02-crud-mysql",
+  "projects": {
+    "02-crud-mysql": {
+      "type": "application",
+      "root": "apps/02-crud-mysql",
+      "entryFile": "main",
+      "sourceRoot": "apps/02-crud-mysql/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/02-crud-mysql/tsconfig.app.json"
+      }
+    },
+    "userapp": {
+      "type": "application",
+      "root": "apps/userapp",
+      "entryFile": "main",
+      "sourceRoot": "apps/userapp/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/userapp/tsconfig.app.json"
+      }
+    }
+  }
+}
